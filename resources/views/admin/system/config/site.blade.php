@@ -20,6 +20,35 @@
     </div>
 
     <div class="layui-form-item">
+        <label class="layui-form-label">APP名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="app_name" class="layui-input" lay-verify="required" placeholder="请输入APP名称" value="{{sysconfig('site','app_name')}}">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">APP图标</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="app_logo" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传APP图标" value="{{sysconfig('site','app_logo')}}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="app_logo" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_app_logo" data-upload-select="app_logo" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">APP安装包</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="app_link" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传APP安装包" value="{{sysconfig('site','app_link')}}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="app_link" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_app_link" data-upload-select="app_link" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
         <label class="layui-form-label">后台背景图</label>
         <div class="layui-input-block layuimini-upload">
             <input name="admin_background" class="layui-input layui-col-xs6" placeholder="不填默认#333333" value="{{sysconfig('site','admin_background')}}">

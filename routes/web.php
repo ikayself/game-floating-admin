@@ -25,6 +25,8 @@ Route::get('/', function () {
     return redirect('/' . config('easyadmin.ADMIN'));
 })->middleware([CheckInstall::class]);
 
+Route::get('/', [\App\Http\Controllers\web\IndexController::class, 'index']);
+
 Route::prefix('/api')->group(function () {
     Route::prefix('/apps')->group(function () {
         Route::get('/list', [\App\Http\Controllers\api\AppsController::class, 'list']);

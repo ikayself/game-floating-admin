@@ -74,7 +74,8 @@
 
 <!-- 微信环境提示遮罩 -->
 <div id="weixinTip" class="weixin-tip">
-    <img src="https://game.gtimg.cn/images/game/act/a20200302wechat/tip.png" alt="请在浏览器中打开">
+    <img src="images/pointer.png" alt="请在浏览器中打开">
+    <div>请在浏览器中打开</div>
 </div>
 
 <div class="download-card">

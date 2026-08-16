@@ -42,7 +42,7 @@
         <div class="layui-input-block layuimini-upload">
             <input name="app_link" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传APP安装包" value="{{sysconfig('site','app_link')}}">
             <div class="layuimini-upload-btn">
-                <span><a class="layui-btn" data-upload="app_link" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn" data-upload="app_link" data-upload-number="one" data-upload-exts="apk"><i class="fa fa-upload"></i> 上传</a></span>
                 <span><a class="layui-btn layui-btn-normal" id="select_app_link" data-upload-select="app_link" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
             </div>
         </div>

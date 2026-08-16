@@ -4,6 +4,8 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\common\ApiController;
 use App\Http\Services\annotation\ControllerAnnotation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 #[ControllerAnnotation(title: 'apps')]
 class AppsController extends ApiController
@@ -14,9 +16,19 @@ class AppsController extends ApiController
         $this->model = new \App\Models\Apps();
     }
 
-    public function list(){
+    public function list()
+    {
         $apps = $this->model->get();
         return $this->success($apps);
     }
 
+    public function check(Request $request)
+    {
+        $key = $request->query('key', '');
+        $cdkey = DB::table('cdkey')->where('key', $key)->where('status', 2)->first();
+        if (!$cdkey) {
+            return $this->error('卡密无效');
+        }
+        return $this->success('校验成功');
+    }
 }

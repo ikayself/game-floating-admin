@@ -30,6 +30,7 @@ Route::get('/', [\App\Http\Controllers\web\IndexController::class, 'index']);
 Route::prefix('/api')->group(function () {
     Route::prefix('/apps')->group(function () {
         Route::get('/list', [\App\Http\Controllers\api\AppsController::class, 'list']);
+        Route::any('/check', [\App\Http\Controllers\api\AppsController::class, 'check']);
     });
 });
 

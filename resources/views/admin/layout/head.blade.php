@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>{{sysconfig('site','site_name')}}</title>
@@ -33,6 +34,16 @@
     <script src="/static/config-admin.js?v={{$version}}" charset="utf-8"></script>
     <script src="/static/common/js/admin.js?v={{$version}}" charset="utf-8"></script>
     @include('admin.layout.editor')
+    <script>
+        function randomString(length = 16) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+    </script>
 </head>
-<body>
 
+<body>

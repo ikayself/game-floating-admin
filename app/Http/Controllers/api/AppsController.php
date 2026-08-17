@@ -18,7 +18,13 @@ class AppsController extends ApiController
 
     public function list()
     {
+        $domain = request()->schemeAndHttpHost();
         $apps = $this->model->get();
+        foreach ($apps as $app) {
+            if (!empty($app->image) && !str_starts_with($app->image, 'http')) {
+                $app->image = $domain . '/' . ltrim($app->image, '/');
+            }
+        }
         return $this->success($apps);
     }
 
